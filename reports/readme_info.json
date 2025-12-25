@@ -1,0 +1,142 @@
+{
+  "project_name": "mxfold2",
+  "description": "RNA secondary structure prediction with deep learning and thermodynamic integration via Model Context Protocol (MCP)",
+  "readme_creation_date": "2024-12-24",
+  "readme_status": "complete",
+  "tools": [
+    {
+      "name": "predict_rna_structure",
+      "type": "sync",
+      "description": "Predict RNA secondary structures using MXfold2 models",
+      "example_prompt": "Use predict_rna_structure with input_file @examples/data/sample_rna.fa and model \"Turner\""
+    },
+    {
+      "name": "analyze_thermodynamics",
+      "type": "sync",
+      "description": "RNA thermodynamic analysis with Turner parameters",
+      "example_prompt": "Use analyze_thermodynamics with input_file @examples/data/sample_rna.fa and detailed_analysis true"
+    },
+    {
+      "name": "run_training_demo",
+      "type": "sync",
+      "description": "Model training demonstration workflow",
+      "example_prompt": "Use run_training_demo with output_dir \"results/training_demo\" and model_type \"Mix\""
+    },
+    {
+      "name": "submit_model_comparison",
+      "type": "submit",
+      "description": "Compare multiple models on same dataset",
+      "example_prompt": "Submit model comparison for @examples/data/sample_rna.fa comparing Turner and Mix models"
+    },
+    {
+      "name": "submit_batch_structure_prediction",
+      "type": "submit",
+      "description": "Process multiple files in parallel",
+      "example_prompt": "Submit batch processing for all FASTA files in @examples/data/"
+    },
+    {
+      "name": "submit_large_dataset_analysis",
+      "type": "submit",
+      "description": "Analyze large datasets that require extended processing time",
+      "example_prompt": "Use submit_large_dataset_analysis with input_file \"large_dataset.fa\" and analysis_type \"thermodynamic\""
+    }
+  ],
+  "job_management_tools": [
+    "get_job_status",
+    "get_job_result",
+    "get_job_log",
+    "cancel_job",
+    "list_jobs"
+  ],
+  "scripts": [
+    {
+      "name": "rna_structure_prediction.py",
+      "description": "Predict RNA secondary structures using MXfold2 models",
+      "example_command": "mamba activate ./env_py37\npython scripts/rna_structure_prediction.py --input examples/data/sample_rna.fa --output results/prediction.json --model Turner"
+    },
+    {
+      "name": "model_comparison.py",
+      "description": "Compare multiple models on same data",
+      "example_command": "python scripts/model_comparison.py --input examples/data/sample_rna.fa --models Turner,Mix,MixC --output results/comparison.csv"
+    },
+    {
+      "name": "thermodynamic_analysis.py",
+      "description": "Analyze with Turner thermodynamic parameters",
+      "example_command": "python scripts/thermodynamic_analysis.py --input examples/data/sample_rna.fa --output results/analysis.json --detailed"
+    },
+    {
+      "name": "model_training_demo.py",
+      "description": "Training workflow demonstration",
+      "example_command": "python scripts/model_training_demo.py --output results/training_demo --model Mix --epochs 3"
+    }
+  ],
+  "demo_data": [
+    {
+      "file": "sample_rna.fa",
+      "description": "Sample RNA sequences including tRNA, rRNA, hairpins for comprehensive testing",
+      "used_by": ["predict_rna_structure", "analyze_thermodynamics", "model_comparison", "submit_*"]
+    },
+    {
+      "file": "test_short.fa",
+      "description": "Short test sequences (2 sequences, ~30-50 nucleotides) for rapid testing",
+      "used_by": ["predict_rna_structure", "analyze_thermodynamics", "model_comparison"]
+    }
+  ],
+  "configs": [
+    {
+      "file": "default_config.json",
+      "description": "Global defaults for all scripts",
+      "parameters": {
+        "gpu": -1,
+        "models": ["Turner", "Mix", "MixC", "Zuker"],
+        "output_format": "json",
+        "verbose": true
+      }
+    },
+    {
+      "file": "rna_structure_prediction_config.json",
+      "description": "RNA structure prediction settings",
+      "parameters": {"model": "Turner", "gpu": -1, "output_format": "json"}
+    },
+    {
+      "file": "model_comparison_config.json",
+      "description": "Model comparison parameters",
+      "parameters": {"models": ["Turner", "Mix"], "output_format": "csv"}
+    },
+    {
+      "file": "thermodynamic_analysis_config.json",
+      "description": "Thermodynamic analysis options",
+      "parameters": {"detailed_analysis": true, "model": "Turner"}
+    },
+    {
+      "file": "model_training_demo_config.json",
+      "description": "Training demo configuration",
+      "parameters": {"model_type": "Mix", "epochs": 3, "create_demo_data": true}
+    }
+  ],
+  "environments": {
+    "main": {
+      "path": "./env",
+      "python_version": "3.10",
+      "purpose": "MCP server and modern dependencies",
+      "key_packages": ["fastmcp", "loguru", "click", "pandas", "numpy"]
+    },
+    "legacy": {
+      "path": "./env_py37",
+      "python_version": "3.7",
+      "purpose": "MXfold2 compatibility",
+      "key_packages": ["torch==1.9.0", "mxfold2", "numpy==1.21.0"]
+    }
+  },
+  "installation_verified": true,
+  "examples_tested": true,
+  "mcp_integration_ready": true,
+  "validation_results": {
+    "all_scripts_exist": true,
+    "all_configs_exist": true,
+    "demo_data_accessible": true,
+    "mcp_server_starts": true,
+    "script_help_works": true,
+    "path_references_valid": true
+  }
+}

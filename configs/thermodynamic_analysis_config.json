@@ -1,0 +1,46 @@
+{
+  "_description": "Configuration for thermodynamic analysis script",
+  "_source": "Extracted from examples/use_case_3_thermodynamic_analysis.py",
+
+  "model": "Turner",
+  "param": "turner2004",
+  "gpu": -1,
+  "seed": 0,
+  "detailed_analysis": true,
+  "verbose": true,
+
+  "analysis": {
+    "calculate_gc_content": true,
+    "analyze_structure_features": true,
+    "calculate_energy_density": true,
+    "generate_summary_stats": true
+  },
+
+  "output": {
+    "format": "json",
+    "include_metadata": true,
+    "include_summary": true,
+    "include_individual_analyses": true
+  },
+
+  "structural_features": {
+    "count_base_pairs": true,
+    "identify_stems": true,
+    "identify_loops": true,
+    "identify_bulges": true,
+    "estimate_hairpins": true
+  },
+
+  "examples": {
+    "basic_analysis": {
+      "input": "examples/data/sample_rna.fa",
+      "detailed": true,
+      "output": "results/thermodynamic_analysis.json"
+    },
+    "simple_analysis": {
+      "input": "examples/data/test_short.fa",
+      "detailed": false,
+      "output": "results/simple_analysis.json"
+    }
+  }
+}

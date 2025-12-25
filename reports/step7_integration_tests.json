@@ -1,0 +1,67 @@
+{
+  "test_date": "2025-12-24T10:04:05.952504",
+  "server_path": "/home/xux/Desktop/NucleicMCP/NucleicMCP/tool-mcps/mxfold2_mcp/src/server.py",
+  "python_path": "/home/xux/Desktop/NucleicMCP/NucleicMCP/tool-mcps/mxfold2_mcp/env/bin/python3.10",
+  "tests": {
+    "server_startup": {
+      "status": "passed",
+      "output": "",
+      "error": "\n\n\u256d\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502                                                                              \u2502\n\u2502                         \u2584\u2580\u2580 \u2584\u2580\u2588 \u2588\u2580\u2580 \u2580\u2588\u2580 \u2588\u2580\u2584\u2580\u2588 \u2588\u2580\u2580 \u2588\u2580\u2588                        \u2502\n\u2502                         \u2588\u2580  \u2588\u2580\u2588 \u2584\u2584\u2588  \u2588  \u2588 \u2580 \u2588 \u2588\u2584\u2584 \u2588\u2580\u2580                        \u2502\n\u2502                                                                              \u2502\n\u2502                                FastMCP 2.14.1                                \u2502\n\u2502                                                                              \u2502\n\u2502                                                                              \u2502\n\u2502                    \ud83d\udda5  Server name: mxfold2                                   \u2502\n\u2502                                                                              \u2502\n\u2502                    \ud83d\udce6 Transport:   STDIO                                     \u2502\n\u2502                                                                              \u2502\n\u2502                    \ud83d\udcda Docs:        https://gofastmcp.com                     \u2502\n\u2502                    \ud83d\ude80 Hosting:     https://fastmcp.cloud                     \u2502\n\u2502                                                                              \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\n\n[12/24/25 10:04:07] INFO     Starting MCP server 'mxfold2' with   server.py:2527\n                             transport 'stdio'                                  \n"
+    },
+    "imports": {
+      "status": "passed",
+      "output": "Import successful\n",
+      "error": ""
+    },
+    "tool_counting": {
+      "status": "passed",
+      "tool_count": 11,
+      "tool_names": [
+        "get_job_status",
+        "get_job_result",
+        "get_job_log",
+        "cancel_job",
+        "list_jobs",
+        "predict_rna_structure",
+        "analyze_thermodynamics",
+        "run_training_demo",
+        "submit_model_comparison",
+        "submit_batch_structure_prediction",
+        "submit_large_dataset_analysis"
+      ],
+      "error": null
+    },
+    "job_manager": {
+      "status": "passed",
+      "output": "Job manager works: success\n",
+      "error": ""
+    },
+    "example_data": {
+      "status": "passed",
+      "data_files": [
+        "/home/xux/Desktop/NucleicMCP/NucleicMCP/tool-mcps/mxfold2_mcp/examples/data/test_short.fa",
+        "/home/xux/Desktop/NucleicMCP/NucleicMCP/tool-mcps/mxfold2_mcp/examples/data/sample_rna.fa"
+      ],
+      "count": 2
+    },
+    "scripts_availability": {
+      "status": "passed",
+      "required_scripts": [
+        "rna_structure_prediction.py",
+        "thermodynamic_analysis.py",
+        "model_training_demo.py",
+        "model_comparison.py"
+      ],
+      "missing_scripts": [],
+      "scripts_dir": "/home/xux/Desktop/NucleicMCP/NucleicMCP/tool-mcps/mxfold2_mcp/scripts"
+    }
+  },
+  "issues": [],
+  "summary": {
+    "total_tests": 6,
+    "passed": 6,
+    "failed": 0,
+    "pass_rate": "100.0%",
+    "ready_for_production": true
+  }
+}

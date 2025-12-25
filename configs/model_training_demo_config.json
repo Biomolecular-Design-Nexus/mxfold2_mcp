@@ -1,0 +1,46 @@
+{
+  "_description": "Configuration for model training demo script",
+  "_source": "Extracted from examples/use_case_4_model_training.py",
+
+  "model_type": "Mix",
+  "epochs": 3,
+  "create_demo_data": true,
+  "verbose": true,
+
+  "training_parameters": {
+    "learning_rate": 0.001,
+    "batch_size": 1,
+    "optimizer": "Adam",
+    "loss_function": "CrossEntropy"
+  },
+
+  "demo_data": {
+    "num_structures": 5,
+    "structure_types": ["hairpin", "stemloop", "pseudoknot", "bulge", "internal_loop"],
+    "output_format": "bpseq"
+  },
+
+  "output": {
+    "save_config": true,
+    "save_training_log": true,
+    "save_demo_data": true,
+    "format": "json"
+  },
+
+  "valid_models": ["Mix", "MixC", "Zuker", "ZukerC"],
+
+  "examples": {
+    "basic_training": {
+      "output": "results/training_demo",
+      "model_type": "Mix",
+      "epochs": 3
+    },
+    "extended_training": {
+      "output": "results/extended_training",
+      "model_type": "MixC",
+      "epochs": 5
+    }
+  },
+
+  "note": "This is a demonstration script that simulates training workflow rather than performing actual neural network training"
+}

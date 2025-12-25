@@ -1,0 +1,1 @@
+# MXfold2 MCP Server Package

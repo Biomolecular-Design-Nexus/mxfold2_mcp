@@ -1,0 +1,58 @@
+{
+  "_description": "Default configuration for all MXfold2 MCP scripts",
+  "_version": "1.0.0",
+  "_created": "2024-12-24",
+
+  "global": {
+    "gpu": -1,
+    "seed": 0,
+    "verbose": true
+  },
+
+  "models": {
+    "default": "Turner",
+    "valid_models": ["Turner", "Mix", "MixC", "Zuker", "ZukerC", "ZukerL", "ZukerS"],
+    "thermodynamic_models": ["Turner", "Zuker"],
+    "neural_models": ["Mix", "MixC"],
+    "hybrid_models": ["Mix", "MixC"]
+  },
+
+  "paths": {
+    "examples_data": "examples/data",
+    "results": "results",
+    "models": "examples/models",
+    "configs": "configs"
+  },
+
+  "output": {
+    "default_format": "json",
+    "supported_formats": ["json", "csv", "bpseq"],
+    "include_metadata": true,
+    "create_directories": true
+  },
+
+  "performance": {
+    "batch_size": 1,
+    "enable_timing": true,
+    "memory_optimization": false
+  },
+
+  "error_handling": {
+    "continue_on_error": true,
+    "log_errors": true,
+    "graceful_degradation": true
+  },
+
+  "examples": {
+    "test_files": {
+      "short": "examples/data/test_short.fa",
+      "sample": "examples/data/sample_rna.fa"
+    },
+    "output_dirs": {
+      "prediction": "results/prediction",
+      "comparison": "results/comparison",
+      "analysis": "results/analysis",
+      "training": "results/training"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "_description": "Configuration for RNA structure prediction script",
+  "_source": "Extracted from examples/use_case_1_basic_prediction.py",
+
+  "model": "Turner",
+  "gpu": -1,
+  "seed": 0,
+  "verbose": true,
+
+  "model_parameters": {
+    "max_helix_length": 30,
+    "embed_size": 0,
+    "use_constraint": false
+  },
+
+  "output": {
+    "formats": ["json", "bpseq"],
+    "include_metadata": true
+  },
+
+  "valid_models": ["Turner", "Mix", "MixC", "Zuker", "ZukerC", "ZukerL", "ZukerS"],
+
+  "examples": {
+    "basic_prediction": {
+      "input": "examples/data/test_short.fa",
+      "model": "Turner",
+      "output": "results/basic_prediction.json"
+    },
+    "neural_model": {
+      "input": "examples/data/sample_rna.fa",
+      "model": "MixC",
+      "output": "results/neural_prediction.json"
+    }
+  }
+}

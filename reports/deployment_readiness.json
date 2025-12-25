@@ -1,0 +1,31 @@
+{
+  "test_date": "2025-12-24T10:08:02.791696",
+  "deployment_readiness": {
+    "server_startup": true,
+    "tool_definitions": true,
+    "tool_count": 11,
+    "found_tools": [
+      "submit_large_dataset_analysis",
+      "submit_model_comparison",
+      "analyze_thermodynamics",
+      "get_job_log",
+      "predict_rna_structure",
+      "list_jobs",
+      "get_job_result",
+      "submit_batch_structure_prediction",
+      "run_training_demo",
+      "cancel_job",
+      "get_job_status"
+    ],
+    "dependencies": true,
+    "file_structure": true,
+    "missing_files": [],
+    "job_manager": true,
+    "paths_permissions": true
+  },
+  "issues": [],
+  "ready_for_deployment": true,
+  "readiness_score": 1.0,
+  "passed_checks": 6,
+  "total_checks": 6
+}

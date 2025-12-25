@@ -1,0 +1,10 @@
+{
+  "setup_commands": [
+    "(command -v mamba >/dev/null 2>&1 && mamba env create -p ./env python=3.10 pip -y) || (command -v conda >/dev/null 2>&1 && conda env create -p ./env python=3.10 pip -y) || (echo \"Warning: Neither mamba nor conda found, creating venv instead\" && python3 -m venv ./env)",
+    "./env/bin/pip install loguru click pandas numpy tqdm",
+    "./env/bin/pip install --force-reinstall --no-cache-dir fastmcp",
+    "(command -v mamba >/dev/null 2>&1 && mamba env create -p ./env_py37 python=3.7 -y) || (command -v conda >/dev/null 2>&1 && conda env create -p ./env_py37 python=3.7 -y) || (echo \"Warning: Neither mamba nor conda found, creating venv for py37 instead\" && python3.7 -m venv ./env_py37)",
+    "./env_py37/bin/pip install torch==1.9.0 torchvision==0.10.0 numpy==1.21.0 tqdm pybind11",
+    "./env_py37/bin/pip install -e repo/mxfold2"
+  ]
+}

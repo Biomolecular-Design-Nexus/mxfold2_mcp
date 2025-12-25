@@ -1,0 +1,39 @@
+{
+  "_description": "Configuration for model comparison script",
+  "_source": "Extracted from examples/use_case_2_model_comparison.py",
+
+  "models": ["Turner", "Mix"],
+  "gpu": -1,
+  "seed": 0,
+  "verbose": true,
+  "include_timing": true,
+
+  "output": {
+    "format": "csv",
+    "include_metadata": true,
+    "include_runtime": true,
+    "include_errors": true
+  },
+
+  "valid_models": ["Turner", "Mix", "MixC", "Zuker", "ZukerC", "ZukerL", "ZukerS"],
+
+  "comparison_sets": {
+    "basic": ["Turner", "Mix"],
+    "neural": ["Mix", "MixC"],
+    "comprehensive": ["Turner", "Mix", "MixC", "Zuker"],
+    "thermodynamic": ["Turner", "Zuker"]
+  },
+
+  "examples": {
+    "basic_comparison": {
+      "input": "examples/data/sample_rna.fa",
+      "models": ["Turner", "Mix"],
+      "output": "results/basic_comparison.csv"
+    },
+    "comprehensive_comparison": {
+      "input": "examples/data/sample_rna.fa",
+      "models": ["Turner", "Mix", "MixC"],
+      "output": "results/comprehensive_comparison.csv"
+    }
+  }
+}

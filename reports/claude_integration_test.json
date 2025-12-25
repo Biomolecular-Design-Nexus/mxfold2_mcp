@@ -1,0 +1,155 @@
+{
+  "test_date": "2025-12-24T10:06:00",
+  "test_type": "claude_code_integration_simulation",
+  "results": [
+    {
+      "prompt": "Predict the RNA structure for the sequences in examples/data/sample_rna.fa using the Turner model.",
+      "tool_calls": [
+        [
+          "predict_rna_structure",
+          {
+            "input_file": "examples/data/sample_rna.fa",
+            "model": "Turner",
+            "verbose": false
+          }
+        ]
+      ],
+      "results": [
+        [
+          "predict_rna_structure",
+          {
+            "status": "error",
+            "error": "'FunctionTool' object is not callable"
+          }
+        ]
+      ]
+    },
+    {
+      "prompt": "Try to analyze a non-existent file.",
+      "tool_calls": [
+        [
+          "predict_rna_structure",
+          {
+            "input_file": "/tmp/nonexistent.fa",
+            "model": "Turner"
+          }
+        ]
+      ],
+      "results": [
+        [
+          "predict_rna_structure",
+          {
+            "status": "error",
+            "error": "'FunctionTool' object is not callable"
+          }
+        ]
+      ]
+    },
+    {
+      "prompt": "Submit a model comparison job for examples/data/sample_rna.fa comparing Turner and Mix models.",
+      "tool_calls": [
+        [
+          "submit_model_comparison",
+          {
+            "input_file": "examples/data/sample_rna.fa",
+            "models": [
+              "Turner",
+              "Mix"
+            ],
+            "job_name": "test_comparison"
+          }
+        ]
+      ],
+      "results": [
+        [
+          "submit_model_comparison",
+          {
+            "status": "error",
+            "error": "'FunctionTool' object is not callable"
+          }
+        ]
+      ]
+    },
+    {
+      "prompt": "List all submitted jobs and their status.",
+      "tool_calls": [
+        [
+          "list_jobs",
+          {}
+        ]
+      ],
+      "results": [
+        [
+          "list_jobs",
+          {
+            "status": "error",
+            "error": "'FunctionTool' object is not callable"
+          }
+        ]
+      ]
+    },
+    {
+      "prompt": "First do thermodynamic analysis on examples/data/test_short.fa, then submit a batch processing job.",
+      "tool_calls": [
+        [
+          "analyze_thermodynamics",
+          {
+            "input_file": "examples/data/test_short.fa",
+            "detailed_analysis": true
+          }
+        ],
+        [
+          "submit_batch_structure_prediction",
+          {
+            "input_files": [
+              "examples/data/sample_rna.fa",
+              "examples/data/test_short.fa"
+            ],
+            "model": "Turner",
+            "job_name": "batch_test"
+          }
+        ]
+      ],
+      "results": [
+        [
+          "analyze_thermodynamics",
+          {
+            "status": "error",
+            "error": "'FunctionTool' object is not callable"
+          }
+        ],
+        [
+          "submit_batch_structure_prediction",
+          {
+            "status": "error",
+            "error": "'FunctionTool' object is not callable"
+          }
+        ]
+      ]
+    },
+    {
+      "prompt": "Run a training demo in results/integration_demo using Mix model for 1 epoch.",
+      "tool_calls": [
+        [
+          "run_training_demo",
+          {
+            "output_dir": "results/integration_demo",
+            "model_type": "Mix",
+            "epochs": 1,
+            "create_demo_data": true
+          }
+        ]
+      ],
+      "results": [
+        [
+          "run_training_demo",
+          {
+            "status": "error",
+            "error": "'FunctionTool' object is not callable"
+          }
+        ]
+      ]
+    }
+  ],
+  "success": false
+}
